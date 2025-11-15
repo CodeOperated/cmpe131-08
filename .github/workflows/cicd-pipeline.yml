@@ -17,7 +17,6 @@ steps:
 # Step 1: Check out the repository code
 - name: Checkout repository
 uses: actions/checkout@v4
-
 - name: Use Node.js 20.x
 uses: actions/setup-node@v4
 with:
@@ -57,7 +56,6 @@ context: .
 push: true
 tags: ${{ secrets.DOCKERHUB_USERNAME }}/simple-node-app:${{ github.sha }}
 # (Optional) The "deploy" job is for Continuous Deployment
-
 deploy:
 # This job runs only after the image has been successfully pushed
 needs: build-and-push
